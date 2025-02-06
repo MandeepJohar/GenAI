@@ -9,9 +9,9 @@ from dotenv import load_dotenv
 
 
 # Streamlit app
-st.set_page_config(page_title="Summarize text from youtube or web url")
-st.title("Summarize text from youtube or web url")
-st.subheader('Summarize url')
+st.set_page_config(page_title="Summarize text")
+st.title("Summarize")
+st.subheader('Share url')
 
 # get the Groq api key 
 with st.sidebar:
@@ -30,7 +30,7 @@ Content:{text}
 prompt=PromptTemplate(template=prompt_template, input_variables=["text"])
 
 if st.button("Summarize the content from YT or Website"):
-    ## Validate all inputs 
+    ## Validation 
     if not groq_api_key.strip() or not generic_url.strip():
         st.error("Please provide the information to get started")
  #   elif not validators.url(generic_url):
